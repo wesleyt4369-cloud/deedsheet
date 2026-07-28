@@ -320,13 +320,17 @@ export default function DeedSheet() {
   };
 
   const fonts = `
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Libre+Franklin:wght@400;500;600&display=swap');
-    .fraunces { font-family: 'Fraunces', serif; }
-    input:focus, textarea:focus, select:focus { outline: 2px solid #A8853C; outline-offset: 1px; }
+@page { size: letter portrait; margin: 0.25in; }
     @media print {
       .chrome { display: none !important; }
-      .report-wrap { margin: 0 !important; box-shadow: none !important; border: none !important; }
       body { background: #EFE7D3 !important; }
+      .report-wrap {
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        max-width: 100% !important;
+        zoom: 0.78;
+      }
     }
   `;
 
