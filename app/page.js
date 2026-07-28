@@ -320,16 +320,19 @@ export default function DeedSheet() {
   };
 
   const fonts = `
-@page { size: letter portrait; margin: 0.25in; }
+@page { size: letter portrait; margin: 0.2in; }
     @media print {
+      html, body { height: auto !important; }
+      * { min-height: 0 !important; }
       .chrome { display: none !important; }
       body { background: #EFE7D3 !important; }
       .report-wrap {
-        margin: 0 !important;
+        margin: 0 auto !important;
         box-shadow: none !important;
         border: none !important;
         max-width: 100% !important;
         zoom: 0.78;
+        page-break-after: avoid;
       }
     }
   `;
