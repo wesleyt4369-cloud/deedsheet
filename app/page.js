@@ -687,7 +687,7 @@ export default function DeedSheet() {
   };
 
   const buildMap = async () => {
-    if (!GEOAPIFY_KEY) return;
+  if (!GEOAPIFY_KEY) { console.warn("DeedSheet: Geoapify key is MISSING from this build"); return; }
     const sig = JSON.stringify([subject.address, subject.city, comps.map((c) => c.address)]);
     if (sig === mapSig && mapUrl) return; // addresses unchanged
     setMapBusy(true);
